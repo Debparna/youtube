@@ -156,12 +156,3 @@ function requestVideoPlaylist(playlistId) {
     }
   });
 }
-
-function requestComments() {
-  const request = gapi.client.youtube.commentThreads.list(
-    videoId: 'J2X5mJ3HDYE',
-    part: 'snippet','replies'
-  ).then(response => {
-    console.log(response);
-  }
-}
