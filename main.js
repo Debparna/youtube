@@ -131,7 +131,7 @@ function requestVideoPlaylist(playlistId) {
   };
 
   const request = gapi.client.youtube.playlistItems.list(requestOptions);
-  const videoId;
+  const videoId = '';
   request.execute(response => {
     console.log(response);
     const playListItems = response.result.items;
