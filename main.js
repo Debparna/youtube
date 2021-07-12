@@ -131,7 +131,7 @@ function requestVideoPlaylist(playlistId) {
   };
 
   const request = gapi.client.youtube.playlistItems.list(requestOptions);
-
+  const videoId;
   request.execute(response => {
     console.log(response);
     const playListItems = response.result.items;
@@ -140,7 +140,7 @@ function requestVideoPlaylist(playlistId) {
 
       // Loop through videos and append output
       playListItems.forEach(item => {
-        const videoId = item.snippet.resourceId.videoId;
+         videoId = item.snippet.resourceId.videoId;
 
         output += `
           <div class="col s3">
