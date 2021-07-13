@@ -14,8 +14,8 @@ const videoContainer = document.getElementById('video-container');
 const commentForm = document.getElementById('comment-form');
 const commentInput = document.getElementById('comment-input');
 
-const defaultChannel = 'techguyweb';
-const defaultVideo = 'r-yxNNO1EI8&t=2681s';
+const defaultChannel = 'J2X5mJ3HDYE';
+const defaultVideo = 'techguyweb';
 
 // Form submit and change channel
 channelForm.addEventListener('submit', e => {
@@ -133,44 +133,29 @@ function requestVideoPlaylist(playlistId) {
     maxResults: 10
   };
 
-  const request = gapi.client.youtube.playlistItems.list(requestOptions);
+  const request = gapi.client.youtube.commentThreads.list(requestOptions);
 
   request.execute(response => {
     console.log(response);
-    const playListItems = response.result.items;
-    if (playListItems) {
-      let output = '<br><h4 class="center-align">Latest Videos</h4>';
-
-      // Loop through videos and append output
-      playListItems.forEach(item => {
-        const videoId = item.snippet.resourceId.videoId;
-
-        output += `
-          <div class="col s3">
-          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        `;
-      });
-
-      // Output videos
-      videoContainer.innerHTML = output;
-    } else {
-      videoContainer.innerHTML = 'No Uploaded Videos';
-    }
+      // const playListItems = response.result.items;
+      // if (playListItems) {
+      //   let output = '<br><h4 class="center-align">Latest Videos</h4>';
+      //
+      //   // Loop through videos and append output
+      //   playListItems.forEach(item => {
+      //     const videoId = item.snippet.resourceId.videoId;
+      //
+      //     output += `
+      //       <div class="col s3">
+      //       <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      //       </div>
+      //     `;
+      //   });
+      //
+      //   // Output videos
+      //   videoContainer.innerHTML = output;
+      // } else {
+      //   videoContainer.innerHTML = 'No Uploaded Videos';
+      // }
   });
-}
-
-// Get comments from API
-function getVideoComments(videoId) {
-
-  const requestOptions = {
-    part: 'id,snippet',
-    videoId: 'J2X5mJ3HDYE',
-    key: 'AIzaSyDfl_ATe1VDf_x5_GRxR-n_PSV3hvBQxmk'
-  };
-
-  const request = gapi.client.youtube.commentThreads.list(requestOptions);
-  request.execute(response => {
-      console.log(response);
-  })
 }
