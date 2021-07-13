@@ -11,22 +11,17 @@ const content = document.getElementById('content');
 const channelForm = document.getElementById('channel-form');
 const channelInput = document.getElementById('channel-input');
 const videoContainer = document.getElementById('video-container');
-const commentInput = document.getElementById('comment-input');
-const commentForm = document.getElementById('comment-form');
+const commentContainer = document.getElementById('comment-container');
 
 const defaultChannel = 'techguyweb';
 
 // Form submit and change channel
 channelForm.addEventListener('submit', e => {
   e.preventDefault();
-  const channel = channelInput.value;
-  getChannel(channel);
-});
 
-commentForm.addEventListener('submit', e => {
-  e.preventDefault();
-  const videoID = commentInput.value;
-  getComments(channel);
+  const channel = channelInput.value;
+
+  getChannel(channel);
 });
 
 // Load auth2 library
