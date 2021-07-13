@@ -116,8 +116,8 @@ function getChannel(channel) {
       showChannelData(output);
 
       //const playlistId = channel.contentDetails.relatedPlaylists.uploads;
-      const playlistId = 'J2X5mJ3HDYE';
-      requestVideoPlaylist(playlistId);
+      const videoId = 'J2X5mJ3HDYE';
+      requestVideoPlaylist(videoId);
     })
     .catch(err => alert('No Channel By That Name'));
 }
@@ -127,9 +127,9 @@ function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
-function requestVideoPlaylist(playlistId) {
+function requestVideoPlaylist(videoId) {
   const requestOptions = {
-    playlistId: playlistId,
+    videoId: videoId,
     part: 'snippet',
     maxResults: 10
   };
