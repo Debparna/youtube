@@ -6,9 +6,7 @@ const DISCOVERY_DOCS = [
 const SCOPES = [
     'https://www.googleapis.com/auth/yt-analytics.readonly',
     'https://www.googleapis.com/auth/youtube.force-ssl',
-    'https://www.googleapis.com/auth/youtube',
-    'https://www.googleapis.com/auth/youtubepartner',
-    'https://www.googleapis.com/auth/youtubepartner-channel-audit'
+    'https://www.googleapis.com/auth/youtube'
 ];
 
 const authorizeButton = document.getElementById('authorize-button');
