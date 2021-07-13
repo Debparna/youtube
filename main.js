@@ -168,7 +168,6 @@ function requestVideoPlaylist(playlistId) {
 function getVideoComments(videoId) {
 
   const requestOptions = {
-    key: 'AIzaSyD8bAvdwcEHasMvfK-SRmHS3woTV7T3RUU',
     part: 'snippet',
     videoId: videoId
   };
