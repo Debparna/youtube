@@ -26,7 +26,7 @@ channelForm.addEventListener('submit', e => {
 commentForm.addEventListener('submit', e => {
   e.preventDefault();
   const videoID = commentInput.value;
-  getComments(videoID);
+  getVideoComments(videoID);
 });
 
 // Load auth2 library
