@@ -153,7 +153,6 @@ function requestVideoPlaylist(playlistId) {
         output += `
           <div class="col s3">
             <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            <p> ${comments} </p>
           </div>
 
         `;
@@ -178,12 +177,8 @@ function getVideoComments(videoId) {
     const videoComments = response.result.items;
 
     for(var i = 0; i < videoComments.length; i++){
-      //console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
-      output += `
-          <img src= "${videoComments.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl}">
-          <h5> ${videoComments.items[i].snippet.topLevelComment.snippet.authorDisplayName} </h5>
-          <p> ${videoComments.items[i].snippet.topLevelComment.snippet.textDisplay} </p>
-      `;
+      console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
+
     }
   })
 }
