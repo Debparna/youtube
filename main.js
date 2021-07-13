@@ -15,6 +15,7 @@ const commentForm = document.getElementById('comment-form');
 const commentInput = document.getElementById('comment-input');
 
 const defaultChannel = 'techguyweb';
+const defaultVideo = 'r-yxNNO1EI8&t=2681s';
 
 // Form submit and change channel
 channelForm.addEventListener('submit', e => {
@@ -60,6 +61,7 @@ function updateSigninStatus(isSignedIn) {
     content.style.display = 'block';
     videoContainer.style.display = 'block';
     getChannel(defaultChannel);
+    getVideoComments(defaultVideo);
   } else {
     authorizeButton.style.display = 'block';
     signoutButton.style.display = 'none';
@@ -164,12 +166,15 @@ function requestVideoPlaylist(playlistId) {
 
 // Get comments from API
 function getVideoComments(videoId) {
-  const request =  gapi.client.youtube.commentThreads.list({
+
+  const requestOptions = {
     key: 'AIzaSyD8bAvdwcEHasMvfK-SRmHS3woTV7T3RUU',
-    part: 'snippet,contentDetails,statistics',
+    part: 'snippet',
     videoId: videoId
-  })
-  .then(response => {
+  };
+
+  const request = gapi.client.youtube.commentThreads.list(requestOptions);
+  request.execute(response => {
       console.log(response);
   })
 }
