@@ -13,6 +13,7 @@ const channelForm = document.getElementById('channel-form');
 const channelInput = document.getElementById('channel-input');
 const videoContainer = document.getElementById('video-container');
 const commentForm = document.getElementById('comment-form');
+const commentContainer= document.getElementById('comment-container');
 const commentInput = document.getElementById('comment-input');
 
 const defaultChannel = 'techguyweb';
@@ -149,8 +150,8 @@ function requestVideoPlaylist(playlistId) {
       // Loop through videos and append output
       playListItems.forEach(item => {
         const videoId = item.snippet.resourceId.videoId;
-        const comments = getVideoComments(videoId);
-        console.log(comments);
+        getVideoComments(videoId);
+        //console.log(comments);
         output += `
           <div class="col s3">
             <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -179,7 +180,11 @@ function getVideoComments(videoId) {
 
      for(var i = 0; i < videoComments.length; i++){
        //console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
-       const comments = videoComments[i].snippet.topLevelComment.snippet.textDisplay;
+       output += `
+          <p> ${videoComments[i].snippet.topLevelComment.snippet.textDisplay} </p>
+       `;
+
+       commentContainer.innerHTML = output;
        //console.log(comments);
      }
   })
