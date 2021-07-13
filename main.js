@@ -176,6 +176,7 @@ function getVideoComments(videoId) {
   .then(response => {
 
       const videoComments = response.result.items;
-      console.log(videoComments);
+      const videoCommentText = response.result.items.snippet.topLevelComment.snippet.textDisplay;
+      console.log(videoCommentText);
   })
 }
