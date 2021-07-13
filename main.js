@@ -18,10 +18,14 @@ const defaultChannel = 'techguyweb';
 // Form submit and change channel
 channelForm.addEventListener('submit', e => {
   e.preventDefault();
-
   const channel = channelInput.value;
-
   getChannel(channel);
+});
+
+commentForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const videoID = commentInput.value;
+  getComments(videoID);
 });
 
 // Load auth2 library
