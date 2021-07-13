@@ -169,7 +169,8 @@ function requestVideoPlaylist(playlistId) {
 function getVideoComments(videoId) {
   const request =  gapi.client.youtube.playlistItems.list({
     part: 'snippet',
-    videoId: videoId
+    videoId: videoId,
+    key: 'AIzaSyDfl_ATe1VDf_x5_GRxR-n_PSV3hvBQxmk'
   })
   .then(response => {
       console.log(response);
