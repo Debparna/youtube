@@ -3,7 +3,7 @@ const CLIENT_ID = '610238259195-faicttc4up4m4d3d91n8a38kfl68r2ep.apps.googleuser
 const DISCOVERY_DOCS = [
   'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'
 ];
-const SCOPES = 'https://www.googleapis.com/auth/youtube.readonly';
+const SCOPES = 'https://www.googleapis.com/auth/youtube.force-ssl';
 
 const authorizeButton = document.getElementById('authorize-button');
 const signoutButton = document.getElementById('signout-button');
