@@ -15,7 +15,7 @@ const commentForm = document.getElementById('comment-form');
 const commentInput = document.getElementById('comment-input');
 
 const defaultChannel = 'techguyweb';
-const defaultVideo = 'r-yxNNO1EI8&t=2681s';
+const defaultVideo = 'J2X5mJ3HDYE';
 
 // Form submit and change channel
 channelForm.addEventListener('submit', e => {
