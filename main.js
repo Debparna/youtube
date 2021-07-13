@@ -180,7 +180,8 @@ function getVideoComments(videoId) {
 
      for(var i = 0; i < videoComments.length; i++){
        out += `
-          <img src= "${videoComments[i].snippet.topLevelComment.snippet.authorProfileImageUrl}">
+          <img class= "rounded-circle" src= "${videoComments[i].snippet.topLevelComment.snippet.authorProfileImageUrl}">
+          <a href = "${data.items[i].snippet.topLevelComment.snippet.authorChannelUrl}" target="_blank" >
           <h5> ${videoComments[i].snippet.topLevelComment.snippet.authorDisplayName} </h5>
           <p> ${videoComments[i].snippet.topLevelComment.snippet.textDisplay} </p>
        `;
