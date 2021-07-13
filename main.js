@@ -3,7 +3,13 @@ const CLIENT_ID = '610238259195-faicttc4up4m4d3d91n8a38kfl68r2ep.apps.googleuser
 const DISCOVERY_DOCS = [
   'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'
 ];
-const SCOPES = 'https://www.googleapis.com/auth/youtube.force-ssl';
+const SCOPES = [
+    'https://www.googleapis.com/auth/yt-analytics.readonly',
+    'https://www.googleapis.com/auth/youtube.force-ssl',
+    'https://www.googleapis.com/auth/youtube',
+    'https://www.googleapis.com/auth/youtubepartner',
+    'https://www.googleapis.com/auth/youtubepartner-channel-audit'
+];
 
 const authorizeButton = document.getElementById('authorize-button');
 const signoutButton = document.getElementById('signout-button');
@@ -166,7 +172,6 @@ function requestVideoPlaylist(playlistId) {
 
 // Get comments from API
 function getVideoComments(videoId) {
-
   const request =  gapi.client.youtube.commentThreads.list({
     part: 'snippet',
     channelId: 'UC29ju8bIPH5as8OGnQzwJyA'
