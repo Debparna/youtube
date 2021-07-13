@@ -24,11 +24,7 @@ channelForm.addEventListener('submit', e => {
   getChannel(channel);
 });
 
-commentForm.addEventListener('submit', e => {
-  e.preventDefault();
-  const videoID = commentInput.value;
-  getVideoComments(videoID);
-});
+
 
 // Load auth2 library
 function handleClientLoad() {
@@ -168,9 +164,9 @@ function requestVideoPlaylist(playlistId) {
 function getVideoComments(videoId) {
 
   const requestOptions = {
-    part: 'snippet',
-    videoId: videoId,
-    key: "AIzaSyDfl_ATe1VDf_x5_GRxR-n_PSV3hvBQxmk"
+    part: 'id','snippet',
+    videoId: 'J2X5mJ3HDYE',
+    key: 'AIzaSyDfl_ATe1VDf_x5_GRxR-n_PSV3hvBQxmk'
   };
 
   const request = gapi.client.youtube.commentThreads.list(requestOptions);
