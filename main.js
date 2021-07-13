@@ -62,7 +62,7 @@ function updateSigninStatus(isSignedIn) {
     content.style.display = 'block';
     videoContainer.style.display = 'block';
     getChannel(defaultChannel);
-    getVideoComments(defaultVideo);
+  //  getVideoComments(defaultVideo);
   } else {
     authorizeButton.style.display = 'block';
     signoutButton.style.display = 'none';
@@ -149,7 +149,7 @@ function requestVideoPlaylist(playlistId) {
       // Loop through videos and append output
       playListItems.forEach(item => {
         const videoId = item.snippet.resourceId.videoId;
-
+        getVideoComments(videoId);
         output += `
           <div class="col s3">
           <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -167,9 +167,9 @@ function requestVideoPlaylist(playlistId) {
 
 // Get comments from API
 function getVideoComments(videoId) {
-  const request =  gapi.client.youtube.commentThreads.list({
+  const request =  gapi.client.youtube.playlistItems.list({
     part: 'snippet',
-    videoId: 'J2X5mJ3HDYE'
+    videoId: videoId
   })
   .then(response => {
       console.log(response);
