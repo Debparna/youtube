@@ -29,7 +29,7 @@ channelForm.addEventListener('submit', e => {
 commentForm.addEventListener('submit', e => {
   e.preventDefault();
   const videoID = commentInput.value;
-  getVideoComments(videoID);
+  //getVideoComments(videoID);
 });
 
 // Load auth2 library
@@ -150,7 +150,7 @@ function requestVideoPlaylist(playlistId) {
       // Loop through videos and append output
       playListItems.forEach(item => {
         const videoId = item.snippet.resourceId.videoId;
-      //  getVideoComments(videoId);
+        getVideoComments(videoId);
         //console.log(comments);
         output += `
           <div class="col s3">
