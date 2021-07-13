@@ -12,7 +12,7 @@ const channelForm = document.getElementById('channel-form');
 const channelInput = document.getElementById('channel-input');
 const videoContainer = document.getElementById('video-container');
 const commentContainer = document.getElementById('comment-container');
-const commentForm = document.getElementById('comment-form');
+const commentForm = document.getElementById('comment-container');
 
 const defaultChannel = 'techguyweb';
 
