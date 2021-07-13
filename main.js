@@ -174,9 +174,10 @@ function getVideoComments(videoId) {
     key: 'AIzaSyDfl_ATe1VDf_x5_GRxR-n_PSV3hvBQxmk'
   })
   .then(response => {
+    const videoComments = response.result.items;
 
-      const videoComments = response.result.items;
-      const videoCommentText = response.result.items.snippet.topLevelComment.snippet.textDisplay;
-      console.log(videoCommentText);
+    for(var i = 0; i < videoComments.length; i++){
+      console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
+    }
   })
 }
