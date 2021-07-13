@@ -181,11 +181,11 @@ function getVideoComments(videoId) {
      for(var i = 0; i < videoComments.length; i++){
        out += `
           <img class= "rounded-circle" src= "${videoComments[i].snippet.topLevelComment.snippet.authorProfileImageUrl}">
-          <a href = "${videoComments[i].snippet.topLevelComment.snippet.authorChannelUrl}" target="_blank" >
             <h5> ${videoComments[i].snippet.topLevelComment.snippet.authorDisplayName} </h5>
-          </a>
-          <p> ${videoComments[i].snippet.topLevelComment.snippet.textDisplay} </p>
+            <p> ${videoComments[i].snippet.topLevelComment.snippet.textDisplay} </p>
        `;
+       //<a href = "${videoComments[i].snippet.topLevelComment.snippet.authorChannelUrl}" target="_blank" > </a>
+
        //console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
      }
      commentContainer.innerHTML = out;
