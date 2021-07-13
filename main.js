@@ -177,13 +177,13 @@ function getVideoComments(videoId) {
   })
   .then(response => {
     const videoComments = response.result.items;
+     let output = '<br><h4 class="center-align">Latest Videos</h4>';
 
      for(var i = 0; i < videoComments.length; i++){
-       //console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
        output += `
           <p> ${videoComments[i].snippet.topLevelComment.snippet.textDisplay} </p>
        `;
-
+        //console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
        commentContainer.innerHTML = output;
        //console.log(comments);
      }
