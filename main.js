@@ -28,7 +28,7 @@ channelForm.addEventListener('submit', e => {
 commentForm.addEventListener('submit', e => {
   e.preventDefault();
   const videoID = commentInput.value;
-  getVideoComments(videoID);
+  //getVideoComments(videoID);
 });
 
 // Load auth2 library
@@ -177,7 +177,9 @@ function getVideoComments(videoId) {
     const videoComments = response.result.items;
 
      for(var i = 0; i < videoComments.length; i++){
-       console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
+       //console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
+       const comments = videoComments[i].snippet.topLevelComment.snippet.textDisplay;
+       console.log(comments);
      }
   })
 }
