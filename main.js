@@ -169,7 +169,8 @@ function getVideoComments(videoId) {
 
   const requestOptions = {
     part: 'snippet',
-    videoId: videoId
+    videoId: videoId,
+    key: "AIzaSyDfl_ATe1VDf_x5_GRxR-n_PSV3hvBQxmk"
   };
 
   const request = gapi.client.youtube.commentThreads.list(requestOptions);
