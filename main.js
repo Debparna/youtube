@@ -149,12 +149,13 @@ function requestVideoPlaylist(playlistId) {
       // Loop through videos and append output
       playListItems.forEach(item => {
         const videoId = item.snippet.resourceId.videoId;
-        getVideoComments(videoId);
+        const comments = getVideoComments(videoId);
         output += `
           <div class="col s3">
             <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            <p>  </p>
+            <p> ${comments} </p>
           </div>
+
         `;
       });
 
@@ -177,7 +178,12 @@ function getVideoComments(videoId) {
     const videoComments = response.result.items;
 
     for(var i = 0; i < videoComments.length; i++){
-      console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
+      //console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
+      output += `
+          <img src= "${videoComments.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl}">
+          <h5> ${videoComments.items[i].snippet.topLevelComment.snippet.authorDisplayName} </h5>
+          <p> ${videoComments.items[i].snippet.topLevelComment.snippet.textDisplay} </p>
+      `;
     }
   })
 }
