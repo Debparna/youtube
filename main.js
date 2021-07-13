@@ -152,7 +152,8 @@ function requestVideoPlaylist(playlistId) {
         getVideoComments(videoId);
         output += `
           <div class="col s3">
-          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <p>  </p>
           </div>
         `;
       });
@@ -173,6 +174,8 @@ function getVideoComments(videoId) {
     key: 'AIzaSyDfl_ATe1VDf_x5_GRxR-n_PSV3hvBQxmk'
   })
   .then(response => {
-      console.log(response);
+
+      const videoComments = response.result.items;
+      console.log(videoComments);
   })
 }
