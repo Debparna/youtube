@@ -175,9 +175,9 @@ function getVideoComments(videoId) {
   })
   .then(response => {
     const videoComments = response.result.items;
-    console.log(videoComments.snippet.topLevelComment.snippet.textDisplay);
-    // for(var i = 0; i < videoComments.length; i++){
-    //   console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
-    // }
+
+     for(var i = 0; i < videoComments.length; i++){
+       console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
+     }
   })
 }
