@@ -150,6 +150,7 @@ function requestVideoPlaylist(playlistId) {
       playListItems.forEach(item => {
         const videoId = item.snippet.resourceId.videoId;
         const comments = getVideoComments(videoId);
+        console.log(comments);
         output += `
           <div class="col s3">
             <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -179,7 +180,7 @@ function getVideoComments(videoId) {
      for(var i = 0; i < videoComments.length; i++){
        //console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
        const comments = videoComments[i].snippet.topLevelComment.snippet.textDisplay;
-       console.log(comments);
+       //console.log(comments);
      }
   })
 }
