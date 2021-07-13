@@ -156,7 +156,6 @@ function requestVideoPlaylist(playlistId) {
           <div class="col s3">
             <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
-
         `;
       });
 
@@ -177,15 +176,14 @@ function getVideoComments(videoId) {
   })
   .then(response => {
     const videoComments = response.result.items;
-     let output = '<br><h4 class="center-align">Latest Videos</h4>';
+     let out = '<br><h4 class="center-align">Comments </h4>';
 
      for(var i = 0; i < videoComments.length; i++){
-       output += `
+       out += `
           <p> ${videoComments[i].snippet.topLevelComment.snippet.textDisplay} </p>
        `;
-        //console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
-       commentContainer.innerHTML = output;
-       //console.log(comments);
+       //console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
      }
+     commentContainer.innerHTML = out;
   })
 }
