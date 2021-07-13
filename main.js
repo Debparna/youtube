@@ -14,8 +14,8 @@ const videoContainer = document.getElementById('video-container');
 const commentForm = document.getElementById('comment-form');
 const commentInput = document.getElementById('comment-input');
 
-const defaultChannel = 'J2X5mJ3HDYE';
-const defaultVideo = 'techguyweb';
+const defaultChannel = 'techguyweb';
+const defaultVideo = 'J2X5mJ3HDYE';
 
 // Form submit and change channel
 channelForm.addEventListener('submit', e => {
@@ -57,7 +57,7 @@ function updateSigninStatus(isSignedIn) {
     content.style.display = 'block';
     videoContainer.style.display = 'block';
     getChannel(defaultChannel);
-    getVideoComments(defaultVideo);
+    //getVideoComments(defaultVideo);
   } else {
     authorizeButton.style.display = 'block';
     signoutButton.style.display = 'none';
@@ -115,7 +115,8 @@ function getChannel(channel) {
       `;
       showChannelData(output);
 
-      const playlistId = channel.contentDetails.relatedPlaylists.uploads;
+      //const playlistId = channel.contentDetails.relatedPlaylists.uploads;
+      const playlistId = 'J2X5mJ3HDYE';
       requestVideoPlaylist(playlistId);
     })
     .catch(err => alert('No Channel By That Name'));
