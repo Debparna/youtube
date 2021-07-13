@@ -168,7 +168,6 @@ function requestVideoPlaylist(playlistId) {
 function getVideoComments(videoId) {
 
   const request =  gapi.client.youtube.commentThreads.list({
-    key: 'AIzaSyD8bAvdwcEHasMvfK-SRmHS3woTV7T3RUU',
     part: 'snippet',
     channelId: 'UC29ju8bIPH5as8OGnQzwJyA'
   })
