@@ -180,6 +180,8 @@ function getVideoComments(videoId) {
 
      for(var i = 0; i < videoComments.length; i++){
        out += `
+          <img src= "${videoComments[i].snippet.topLevelComment.snippet.authorProfileImageUrl}">
+          <h5> ${videoComments[i].snippet.topLevelComment.snippet.authorDisplayName} </h5>
           <p> ${videoComments[i].snippet.topLevelComment.snippet.textDisplay} </p>
        `;
        //console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
