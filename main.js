@@ -174,7 +174,7 @@ function requestVideoPlaylist(playlistId) {
 function getVideoComments(videoId) {
   const request =  gapi.client.youtube.commentThreads.list({
     part: 'snippet',
-    channelId: 'UC29ju8bIPH5as8OGnQzwJyA'
+    videoId: 'J2X5mJ3HDYE'
   })
   .then(response => {
       console.log(response);
