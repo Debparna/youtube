@@ -178,7 +178,7 @@ function getVideoComments(videoId) {
     const videoComments = response.result.items;
 
     let out = '<br><h4 class="center-align">Comments </h4>';
-    console.log(videoID);
+
      for(var i = 0; i < videoComments.length; i++){
        const videoID = videoComments[i].snippet.topLevelComment.id;
        out += `
