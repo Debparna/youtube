@@ -188,12 +188,12 @@ function getVideoComments(videoId) {
           </p>
           <p> ${videoComments[i].snippet.topLevelComment.snippet.textDisplay} </p>
           <div>
-            <input type="text" placeholder="Enter Channel Name" id="channel-input">
+            <input type="text" placeholder="Enter Channel Name" id="comment-input">
             <input type="submit" value="Reply" class="btn grey">
             <br>
           </div>
        `;
-       //console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
+       console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
      }
      commentContainer.innerHTML = out;
   })
