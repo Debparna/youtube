@@ -193,7 +193,7 @@ function getVideoComments(videoId) {
             <br>
           </div>
        `;
-       console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
+       console.log(videoComments[i]);
      }
      commentContainer.innerHTML = out;
   })
