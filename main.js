@@ -188,6 +188,7 @@ function getVideoComments(videoId) {
           <div>
             <input type="text" placeholder="Enter Channel Name" id="channel-input">
             <input type="submit" value="Reply" class="btn grey">
+            <br>
           </div>
        `;
        //console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
