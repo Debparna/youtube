@@ -186,9 +186,49 @@ function getVideoComments(videoId) {
           </a>
           <p> ${videoComments[i].snippet.topLevelComment.snippet.textDisplay} </p>
        `;
-
        //console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
      }
      commentContainer.innerHTML = out;
   })
+}
+
+// Get analytics from API
+function getAnalytics(videoId) {
+  const request =  gapi.client.youtube.commentThreads.list({
+    part: 'snippet',
+    videoId: videoId,
+    key: 'AIzaSyDfl_ATe1VDf_x5_GRxR-n_PSV3hvBQxmk'
+  })
+  .then(response => {
+    const videoComments = response.result.items;
+     let out = '<br><h4 class="center-align">Comments </h4>';
+
+     for(var i = 0; i < videoComments.length; i++){
+       out += `
+          <img class= "rounded-circle" src= "${videoComments[i].snippet.topLevelComment.snippet.authorProfileImageUrl}">
+          <a href = "${videoComments[i].snippet.topLevelComment.snippet.authorChannelUrl}" target="_blank" >
+            <h5> ${videoComments[i].snippet.topLevelComment.snippet.authorDisplayName} </h5>
+          </a>
+          <p> ${videoComments[i].snippet.topLevelComment.snippet.textDisplay} </p>
+          <input type="submit" value="Reply" class="btn grey">
+       `;
+       //console.log(videoComments[i].snippet.topLevelComment.snippet.textDisplay);
+     }
+     commentContainer.innerHTML = out;
+  })
+}
+
+gapi.client.youtubeAnalytics.reports.query({
+  "ids": "channel==MINE",
+  "startDate": "2017-01-01",
+  "endDate": "2017-12-31",
+  "metrics": "views,estimatedMinutesWatched,averageViewDuration,averageViewPercentage,subscribersGained",
+  "dimensions": "day",
+  "sort": "day"
+})
+    .then(function(response) {
+            // Handle the results here (response.result has the parsed body).
+            console.log("Response", response);
+          },
+          function(err) { console.error("Execute error", err); });
 }
