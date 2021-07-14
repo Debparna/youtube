@@ -176,10 +176,11 @@ function getVideoComments(videoId) {
   })
   .then(response => {
     const videoComments = response.result.items;
-    const videoID = videoComments.snippet.topLevelComment.id;
+
     let out = '<br><h4 class="center-align">Comments </h4>';
     console.log(videoID);
      for(var i = 0; i < videoComments.length; i++){
+       const videoID = videoComments[i].snippet.topLevelComment.id;
        out += `
           <p>
             <img class= "rounded-circle" src= "${videoComments[i].snippet.topLevelComment.snippet.authorProfileImageUrl}">
@@ -194,7 +195,7 @@ function getVideoComments(videoId) {
             <br>
           </div>
        `;
-       //console.log(videoComments[i]);
+       console.log(videoID);
      }
      commentContainer.innerHTML = out;
   })
