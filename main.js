@@ -188,9 +188,8 @@ function getVideoComments(videoId) {
           </p>
           <p> ${videoComments[i].snippet.topLevelComment.snippet.textDisplay} </p>
           <div>
-            <input type="text" placeholder="Enter Channel Name" id="comment-input">
-            <button onclick="execute()">execute</button>
-            <input type="submit" value="Reply" class="btn grey">
+            <input type="text" placeholder="Enter Comment" id="comment-input">
+            <button class="btn grey" onclick="execute()">Reply</button>
             <br>
           </div>
        `;
