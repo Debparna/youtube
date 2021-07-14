@@ -191,7 +191,7 @@ function getVideoComments(videoId) {
           <p> ${videoComments[i].snippet.topLevelComment.snippet.textDisplay} </p>
           <div>
             <input type="text" placeholder="Enter Comment" id="comment-input">
-            <button class="btn grey" onclick="execute()">Reply</button>
+            <button class="btn grey" onclick="execute(${videoId})">Reply</button>
             <br>
           </div>
        `;
@@ -201,14 +201,14 @@ function getVideoComments(videoId) {
   })
 }
 
-function execute() {
+function execute(videoId) {
   return gapi.client.youtube.comments.insert({
     "part": [
       "snippet"
     ],
     "resource": {
       "snippet": {
-        "parentId": "Ugz_6fEPx559RpL0NWZ4AaABAg",
+        "parentId": videoId,
         "textOriginal": "This is the original comment."
       }
     }
