@@ -189,6 +189,7 @@ function getVideoComments(videoId) {
           <p> ${videoComments[i].snippet.topLevelComment.snippet.textDisplay} </p>
           <div>
             <input type="text" placeholder="Enter Channel Name" id="comment-input">
+            <button onclick="execute()">execute</button>
             <input type="submit" value="Reply" class="btn grey">
             <br>
           </div>
@@ -197,4 +198,23 @@ function getVideoComments(videoId) {
      }
      commentContainer.innerHTML = out;
   })
+}
+
+function execute() {
+  return gapi.client.youtube.comments.insert({
+    "part": [
+      "snippet"
+    ],
+    "resource": {
+      "snippet": {
+        "parentId": "Ugz_6fEPx559RpL0NWZ4AaABAg",
+        "textOriginal": "This is the original comment."
+      }
+    }
+  })
+      .then(function(response) {
+              // Handle the results here (response.result has the parsed body).
+              console.log("Response", response);
+            },
+            function(err) { console.error("Execute error", err); });
 }
