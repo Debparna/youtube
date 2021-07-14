@@ -180,10 +180,12 @@ function getVideoComments(videoId) {
 
      for(var i = 0; i < videoComments.length; i++){
        out += `
-          <img class= "rounded-circle" src= "${videoComments[i].snippet.topLevelComment.snippet.authorProfileImageUrl}">
-          <a href = "${videoComments[i].snippet.topLevelComment.snippet.authorChannelUrl}" target="_blank" >
-            <h5> ${videoComments[i].snippet.topLevelComment.snippet.authorDisplayName} </h5>
-          </a>
+          <p>
+            <img class= "rounded-circle" src= "${videoComments[i].snippet.topLevelComment.snippet.authorProfileImageUrl}">
+            <a href = "${videoComments[i].snippet.topLevelComment.snippet.authorChannelUrl}" target="_blank" >
+              <h5> ${videoComments[i].snippet.topLevelComment.snippet.authorDisplayName} </h5>
+            </a>
+          </p>
           <p> ${videoComments[i].snippet.topLevelComment.snippet.textDisplay} </p>
           <div>
             <input type="text" placeholder="Enter Channel Name" id="channel-input">
